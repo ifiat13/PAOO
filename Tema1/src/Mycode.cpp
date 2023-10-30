@@ -68,5 +68,6 @@ void MotorcycleManager::removeMotorcycle(const std::string& brand, const std::st
             motorcycles.erase(motorcycles.begin() + i);
             break;
         }
+
     }
 }

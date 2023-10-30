@@ -1,0 +1,3 @@
+/home/fiatia1/Cmake/Tema/CMakeFiles/myproject.dir
+/home/fiatia1/Cmake/Tema/CMakeFiles/edit_cache.dir
+/home/fiatia1/Cmake/Tema/CMakeFiles/rebuild_cache.dir

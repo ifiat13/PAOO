@@ -4,13 +4,14 @@
 int main() {
     MotorcycleManager manager;
 
-    manager.addMotorcycle("Honda", "CBR600RR", 2022, 12999.99);
-    manager.addMotorcycle("Kawasaki", "Ninja ZX-6R", 2022, 11999.99);
+    manager.addMotorcycle("Honda", "Shadow VT600", 2002, 3999.99);
+    manager.addMotorcycle("Yamaha", "YZF1000RR", 2022, 15000.99);
+    manager.addMotorcycle("Suzuki", "Intruder1000RR", 2005, 12900.99);
 
     std::cout << "Lista inițială de motociclete:\n";
     manager.listMotorcycles();
 
-    manager.removeMotorcycle("Honda", "CBR600RR");
+    manager.removeMotorcycle("Yamaha", "YZF1000RR");
 
     std::cout << "\nLista de motociclete după ștergerea unei motociclete:\n";
     manager.listMotorcycles();
