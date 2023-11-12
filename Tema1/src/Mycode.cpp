@@ -1,116 +1,139 @@
+// Mycode.cpp
 #include "Mycode.hpp"
-#include <iostream>
-#include <algorithm>
 
-// Implementare pentru clasa Motorcycle
+namespace VehicleSystem {
+    // Implementarea clasei Motorcycle
+    Motorcycle::Motorcycle(const std::string& brand, const std::string& model, int year, float price)
+        : brand(brand), model(model), year(year), price(price) {}
 
-Motorcycle::Motorcycle(const std::string& brand, const std::string& model, int year, float price)
-    : brand(brand), model(model), year(year), price(price), newVehicle(true) {}
-
-Motorcycle::Motorcycle(const Motorcycle& other)
-    : brand(other.brand), model(other.model), year(other.year), price(other.price), newVehicle(other.newVehicle) {}
-
-Motorcycle::Motorcycle(Motorcycle&& other) noexcept
-    : brand(std::move(other.brand)), model(std::move(other.model)), year(other.year), price(other.price), newVehicle(other.newVehicle) {
-    other.year = 0;
-    other.price = 0.0f;
-    other.newVehicle = false;
-}
-
-Motorcycle::Motorcycle(const std::string& brand, const std::string& model, int year, float price, bool isNew)
-    : brand(brand), model(model), year(year), price(price), newVehicle(isNew) {}
-
-Motorcycle& Motorcycle::operator=(const Motorcycle& other) {
-    if (this == &other) {
-        return *this;
+    Motorcycle::~Motorcycle() {
+        std::cout << "Motocicleta " << brand << " " << model << " a fost distrusă." << std::endl;
     }
 
-    brand = other.brand;
-    model = other.model;
-    year = other.year;
-    price = other.price;
-    newVehicle = other.newVehicle;
-    return *this;
-}
+    Motorcycle::Motorcycle(const Motorcycle& other)
+        : brand(other.brand), model(other.model), year(other.year), price(other.price) {}
 
-Motorcycle& Motorcycle::operator=(Motorcycle&& other) noexcept {
-    if (this == &other) {
-        return *this;
-    }
-
-    brand = std::move(other.brand);
-    model = std::move(other.model);
-    year = other.year;
-    price = other.price;
-    newVehicle = other.newVehicle;
-
-    other.year = 0;
-    other.price = 0.0f;
-    other.newVehicle = false;
-
-    return *this;
-}
-
-Motorcycle::~Motorcycle() {
-    std::cout << "Motocicleta " << brand << " " << model << " a fost distrusă." << std::endl;
-}
-
-const std::string& Motorcycle::getBrand() const {
-    return brand;
-}
-
-const std::string& Motorcycle::getModel() const {
-    return model;
-}
-
-int Motorcycle::getYear() const {
-    return year;
-}
-
-float Motorcycle::getPrice() const {
-    return price;
-}
-
-bool Motorcycle::isNew() const {
-    return newVehicle;
-}
-
-void Motorcycle::updatePrice(float newPrice) {
-    price = newPrice;
-}
-
-// Implementare pentru clasa MotorcycleManager
-
-MotorcycleManager::MotorcycleManager() {}
-
-MotorcycleManager::~MotorcycleManager() {
-    std::cout << "Destructor pentru MotorcycleManager" << std::endl;
-}
-
-void MotorcycleManager::addMotorcycle(Motorcycle motorcycle) {
-    motorcycles.push_back(std::move(motorcycle));
-}
-
-void MotorcycleManager::listMotorcycles() const {
-    std::cout << "Lista de motociclete:\n";
-    for (const Motorcycle& motorcycle : motorcycles) {
-        std::cout << "Brand: " << motorcycle.getBrand() << ", Model: " << motorcycle.getModel() << ", An: " << motorcycle.getYear() << ", Preț: $" << motorcycle.getPrice();
-        if (motorcycle.isNew()) {
-            std::cout << " (Nouă)";
+    Motorcycle& Motorcycle::operator=(const Motorcycle& other) {
+        if (this == &other) {
+            return *this;
         }
-        std::cout << std::endl;
+
+        brand = other.brand;
+        model = other.model;
+        year = other.year;
+        price = other.price;
+        return *this;
     }
-}
 
-void MotorcycleManager::removeMotorcycle(const std::string& brand, const std::string& model) {
-    motorcycles.erase(std::remove_if(motorcycles.begin(), motorcycles.end(), [brand, model](const Motorcycle& motorcycle) {
-        return motorcycle.getBrand() == brand && motorcycle.getModel() == model;
-    }), motorcycles.end());
-}
+    Motorcycle::Motorcycle(Motorcycle&& other) noexcept
+        : brand(std::move(other.brand)), model(std::move(other.model)), year(other.year), price(other.price) {
+        other.year = 0;
+        other.price = 0.0f;
+    }
 
-void MotorcycleManager::updatePrices(float percentageIncrease) {
-    for (Motorcycle& motorcycle : motorcycles) {
-        float newPrice = motorcycle.getPrice() * (1 + percentageIncrease / 100);
-        motorcycle.updatePrice(newPrice);
+    Motorcycle& Motorcycle::operator=(Motorcycle&& other) noexcept {
+        if (this != &other) {
+            brand = std::move(other.brand);
+            model = std::move(other.model);
+            year = other.year;
+            price = other.price;
+            other.year = 0;
+            other.price = 0.0f;
+        }
+        return *this;
+    }
+
+    const std::string& Motorcycle::getBrand() const {
+        return brand;
+    }
+
+    void Motorcycle::setBrand(const std::string& newBrand) {
+        brand = newBrand;
+    }
+
+    const std::string& Motorcycle::getModel() const {
+        return model;
+    }
+
+    void Motorcycle::setModel(const std::string& newModel) {
+        model = newModel;
+    }
+
+    int Motorcycle::getYear() const {
+        return year;
+    }
+
+    void Motorcycle::setYear(int newYear) {
+        year = newYear;
+    }
+
+    float Motorcycle::getPrice() const {
+        return price;
+    }
+
+    void Motorcycle::setPrice(float newPrice) {
+        price = newPrice;
+    }
+
+    void Motorcycle::startEngine() {
+        std::cout << "Pornire motor (motocicleta) - " << getBrand() << " " << getModel() << std::endl;
+    }
+
+    void Motorcycle::stopEngine() {
+        std::cout << "Oprire motor (motocicleta) - " << getBrand() << " " << getModel() << std::endl;
+    }
+
+    // Implementarea clasei SportMotorcycle
+    SportMotorcycle::SportMotorcycle(const std::string& brand, const std::string& model, int year, float price, int maxSpeed)
+        : Motorcycle(brand, model, year, price), maxSpeed(maxSpeed) {}
+
+    int SportMotorcycle::getMaxSpeed() const {
+        return maxSpeed;
+    }
+
+    void SportMotorcycle::setMaxSpeed(int speed) {
+        maxSpeed = speed;
+    }
+
+    void SportMotorcycle::startEngine() {
+        std::cout << "Pornire motor (motocicleta sport) - " << getBrand() << " " << getModel() << std::endl;
+    }
+
+    void SportMotorcycle::stopEngine() {
+        std::cout << "Oprire motor (motocicleta sport) - " << getBrand() << " " << getModel() << std::endl;
+    }
+
+    // Implementarea clasei MotorcycleManager
+    MotorcycleManager::MotorcycleManager() {}
+
+    MotorcycleManager::~MotorcycleManager() {
+        std::cout << "Destructor pentru MotorcycleManager" << std::endl;
+    }
+
+    void MotorcycleManager::addMotorcycle(std::unique_ptr<Motorcycle> motorcycle) {
+        motorcycles.push_back(std::move(motorcycle));
+    }
+
+    void MotorcycleManager::listMotorcycles() const {
+        std::cout << "Lista de motociclete:\n";
+        for (const auto& motorcycle : motorcycles) {
+            std::cout << "Brand: " << motorcycle->getBrand() << ", Model: " << motorcycle->getModel() << ", An: " << motorcycle->getYear() << ", Preț: $" << motorcycle->getPrice() << std::endl;
+        }
+    }
+
+    void MotorcycleManager::removeMotorcycle(const std::string& brand, const std::string& model) {
+        motorcycles.erase(
+            std::remove_if(motorcycles.begin(), motorcycles.end(), [&](const auto& motorcycle) {
+                return (motorcycle->getBrand() == brand && motorcycle->getModel() == model);
+            }),
+            motorcycles.end()
+        );
+    }
+
+    void MotorcycleManager::updatePrices(float percentageIncrease) {
+        for (auto& motorcycle : motorcycles) {
+            float newPrice = motorcycle->getPrice() * (1 + percentageIncrease / 100);
+            motorcycle->setPrice(newPrice);
+        }
     }
 }

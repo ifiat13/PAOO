@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 3.0)
 project(myproject)
 
 # Specify the required C++ standard
-if(CMAKE_VERSION GREATER "3.1.2") 
+if(CMAKE_VERSION GREATER "3.1.2") 	
     set(CMAKE_CXX_STANDARD 14)
     set(CMAKE_CXX_STANDARD_REQUIRED ON)
     set(CMAKE_CXX_EXTENSIONS OFF)
@@ -15,8 +15,4 @@ else()
     endif()    
 endif()
 
-# Define the executable
-add_executable(${PROJECT_NAME}
-               src/Mycode.hpp 
-               src/main.cpp
-               src/Mycode.cpp)
+add_subdirectory(src)
