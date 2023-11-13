@@ -64,22 +64,57 @@ CMAKE_BINARY_DIR = /home/fiatia1/Cmake/Tema/build
 
 # The main recursive "all" target.
 all: src/all
+all: header/all
+all: main/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: src/preinstall
+preinstall: header/preinstall
+preinstall: main/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: src/clean
+clean: header/clean
+clean: main/clean
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory header
+
+# Recursive "all" directory target.
+header/all:
+.PHONY : header/all
+
+# Recursive "preinstall" directory target.
+header/preinstall:
+.PHONY : header/preinstall
+
+# Recursive "clean" directory target.
+header/clean:
+.PHONY : header/clean
+
+#=============================================================================
+# Directory level rules for directory main
+
+# Recursive "all" directory target.
+main/all: main/CMakeFiles/myproject_main.dir/all
+.PHONY : main/all
+
+# Recursive "preinstall" directory target.
+main/preinstall:
+.PHONY : main/preinstall
+
+# Recursive "clean" directory target.
+main/clean: main/CMakeFiles/myproject_main.dir/clean
+.PHONY : main/clean
 
 #=============================================================================
 # Directory level rules for directory src
 
 # Recursive "all" directory target.
 src/all: src/CMakeFiles/myproject_library.dir/all
-src/all: src/CMakeFiles/myproject.dir/all
 .PHONY : src/all
 
 # Recursive "preinstall" directory target.
@@ -88,7 +123,6 @@ src/preinstall:
 
 # Recursive "clean" directory target.
 src/clean: src/CMakeFiles/myproject_library.dir/clean
-src/clean: src/CMakeFiles/myproject.dir/clean
 .PHONY : src/clean
 
 #=============================================================================
@@ -98,7 +132,7 @@ src/clean: src/CMakeFiles/myproject.dir/clean
 src/CMakeFiles/myproject_library.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/myproject_library.dir/build.make src/CMakeFiles/myproject_library.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/myproject_library.dir/build.make src/CMakeFiles/myproject_library.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fiatia1/Cmake/Tema/build/CMakeFiles --progress-num=3,4 "Built target myproject_library"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fiatia1/Cmake/Tema/build/CMakeFiles --progress-num=1,2 "Built target myproject_library"
 .PHONY : src/CMakeFiles/myproject_library.dir/all
 
 # Build rule for subdir invocation for target.
@@ -118,30 +152,30 @@ src/CMakeFiles/myproject_library.dir/clean:
 .PHONY : src/CMakeFiles/myproject_library.dir/clean
 
 #=============================================================================
-# Target rules for target src/CMakeFiles/myproject.dir
+# Target rules for target main/CMakeFiles/myproject_main.dir
 
 # All Build rule for target.
-src/CMakeFiles/myproject.dir/all: src/CMakeFiles/myproject_library.dir/all
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/myproject.dir/build.make src/CMakeFiles/myproject.dir/depend
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/myproject.dir/build.make src/CMakeFiles/myproject.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fiatia1/Cmake/Tema/build/CMakeFiles --progress-num=1,2 "Built target myproject"
-.PHONY : src/CMakeFiles/myproject.dir/all
+main/CMakeFiles/myproject_main.dir/all: src/CMakeFiles/myproject_library.dir/all
+	$(MAKE) $(MAKESILENT) -f main/CMakeFiles/myproject_main.dir/build.make main/CMakeFiles/myproject_main.dir/depend
+	$(MAKE) $(MAKESILENT) -f main/CMakeFiles/myproject_main.dir/build.make main/CMakeFiles/myproject_main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fiatia1/Cmake/Tema/build/CMakeFiles --progress-num=3,4 "Built target myproject_main"
+.PHONY : main/CMakeFiles/myproject_main.dir/all
 
 # Build rule for subdir invocation for target.
-src/CMakeFiles/myproject.dir/rule: cmake_check_build_system
+main/CMakeFiles/myproject_main.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fiatia1/Cmake/Tema/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/myproject.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main/CMakeFiles/myproject_main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fiatia1/Cmake/Tema/build/CMakeFiles 0
-.PHONY : src/CMakeFiles/myproject.dir/rule
+.PHONY : main/CMakeFiles/myproject_main.dir/rule
 
 # Convenience name for target.
-myproject: src/CMakeFiles/myproject.dir/rule
-.PHONY : myproject
+myproject_main: main/CMakeFiles/myproject_main.dir/rule
+.PHONY : myproject_main
 
 # clean rule for target.
-src/CMakeFiles/myproject.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/myproject.dir/build.make src/CMakeFiles/myproject.dir/clean
-.PHONY : src/CMakeFiles/myproject.dir/clean
+main/CMakeFiles/myproject_main.dir/clean:
+	$(MAKE) $(MAKESILENT) -f main/CMakeFiles/myproject_main.dir/build.make main/CMakeFiles/myproject_main.dir/clean
+.PHONY : main/CMakeFiles/myproject_main.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -1,6 +1,10 @@
 /home/fiatia1/Cmake/Tema/build/CMakeFiles/edit_cache.dir
 /home/fiatia1/Cmake/Tema/build/CMakeFiles/rebuild_cache.dir
 /home/fiatia1/Cmake/Tema/build/src/CMakeFiles/myproject_library.dir
-/home/fiatia1/Cmake/Tema/build/src/CMakeFiles/myproject.dir
 /home/fiatia1/Cmake/Tema/build/src/CMakeFiles/edit_cache.dir
 /home/fiatia1/Cmake/Tema/build/src/CMakeFiles/rebuild_cache.dir
+/home/fiatia1/Cmake/Tema/build/header/CMakeFiles/edit_cache.dir
+/home/fiatia1/Cmake/Tema/build/header/CMakeFiles/rebuild_cache.dir
+/home/fiatia1/Cmake/Tema/build/main/CMakeFiles/myproject_main.dir
+/home/fiatia1/Cmake/Tema/build/main/CMakeFiles/edit_cache.dir
+/home/fiatia1/Cmake/Tema/build/main/CMakeFiles/rebuild_cache.dir

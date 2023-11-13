@@ -130,20 +130,6 @@ myproject_library/fast:
 	cd /home/fiatia1/Cmake/Tema/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myproject_library.dir/build.make src/CMakeFiles/myproject_library.dir/build
 .PHONY : myproject_library/fast
 
-# Convenience name for target.
-src/CMakeFiles/myproject.dir/rule:
-	cd /home/fiatia1/Cmake/Tema/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/myproject.dir/rule
-.PHONY : src/CMakeFiles/myproject.dir/rule
-
-# Convenience name for target.
-myproject: src/CMakeFiles/myproject.dir/rule
-.PHONY : myproject
-
-# fast build rule for target.
-myproject/fast:
-	cd /home/fiatia1/Cmake/Tema/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myproject.dir/build.make src/CMakeFiles/myproject.dir/build
-.PHONY : myproject/fast
-
 Mycode.o: Mycode.cpp.o
 .PHONY : Mycode.o
 
@@ -168,30 +154,6 @@ Mycode.cpp.s:
 	cd /home/fiatia1/Cmake/Tema/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myproject_library.dir/build.make src/CMakeFiles/myproject_library.dir/Mycode.cpp.s
 .PHONY : Mycode.cpp.s
 
-main.o: main.cpp.o
-.PHONY : main.o
-
-# target to build an object file
-main.cpp.o:
-	cd /home/fiatia1/Cmake/Tema/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myproject.dir/build.make src/CMakeFiles/myproject.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	cd /home/fiatia1/Cmake/Tema/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myproject.dir/build.make src/CMakeFiles/myproject.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	cd /home/fiatia1/Cmake/Tema/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/myproject.dir/build.make src/CMakeFiles/myproject.dir/main.cpp.s
-.PHONY : main.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -200,14 +162,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... myproject"
 	@echo "... myproject_library"
 	@echo "... Mycode.o"
 	@echo "... Mycode.i"
 	@echo "... Mycode.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
 .PHONY : help
 
 

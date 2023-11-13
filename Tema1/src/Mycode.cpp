@@ -2,6 +2,7 @@
 #include "Mycode.hpp"
 
 namespace VehicleSystem {
+
     // Implementarea clasei Motorcycle
     Motorcycle::Motorcycle(const std::string& brand, const std::string& model, int year, float price)
         : brand(brand), model(model), year(year), price(price) {}
@@ -87,6 +88,10 @@ namespace VehicleSystem {
     SportMotorcycle::SportMotorcycle(const std::string& brand, const std::string& model, int year, float price, int maxSpeed)
         : Motorcycle(brand, model, year, price), maxSpeed(maxSpeed) {}
 
+    SportMotorcycle::~SportMotorcycle() {
+        std::cout << "Motocicleta sport " << getBrand() << " " << getModel() << " a fost distrusă." << std::endl;
+    }
+
     int SportMotorcycle::getMaxSpeed() const {
         return maxSpeed;
     }
@@ -117,7 +122,7 @@ namespace VehicleSystem {
     void MotorcycleManager::listMotorcycles() const {
         std::cout << "Lista de motociclete:\n";
         for (const auto& motorcycle : motorcycles) {
-            std::cout << "Brand: " << motorcycle->getBrand() << ", Model: " << motorcycle->getModel() << ", An: " << motorcycle->getYear() << ", Preț: $" << motorcycle->getPrice() << std::endl;
+            Utilities::displayDetails(*motorcycle);
         }
     }
 
@@ -136,4 +141,5 @@ namespace VehicleSystem {
             motorcycle->setPrice(newPrice);
         }
     }
-}
+
+}  // namespace VehicleSystem

@@ -1,5 +1,5 @@
-src/CMakeFiles/myproject_library.dir/Mycode.cpp.o: \
- /home/fiatia1/Cmake/Tema/src/Mycode.cpp /usr/include/stdc-predef.h \
+main/CMakeFiles/myproject_main.dir/main.cpp.o: \
+ /home/fiatia1/Cmake/Tema/main/main.cpp /usr/include/stdc-predef.h \
  /home/fiatia1/Cmake/Tema/src/../header/Mycode.hpp \
  /home/fiatia1/Cmake/Tema/src/../header/Utilities.hpp \
  /usr/include/c++/11/iostream \
@@ -170,4 +170,6 @@ src/CMakeFiles/myproject_library.dir/Mycode.cpp.o: \
  /usr/include/c++/11/bits/stl_algo.h \
  /usr/include/c++/11/bits/algorithmfwd.h \
  /usr/include/c++/11/bits/stl_heap.h \
- /usr/include/c++/11/bits/uniform_int_dist.h
+ /usr/include/c++/11/bits/uniform_int_dist.h \
+ /home/fiatia1/Cmake/Tema/src/../header/Utilities.hpp \
+ /home/fiatia1/Cmake/Tema/src/../header/GenericVehicle.hpp

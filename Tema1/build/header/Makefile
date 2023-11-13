@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fiatia1/Cmake/Tema/build/CMakeFiles /home/fiatia1/Cmake/Tema/build//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
+	cd /home/fiatia1/Cmake/Tema/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/fiatia1/Cmake/Tema/build/CMakeFiles /home/fiatia1/Cmake/Tema/build/header//CMakeFiles/progress.marks
+	cd /home/fiatia1/Cmake/Tema/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 header/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fiatia1/Cmake/Tema/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+	cd /home/fiatia1/Cmake/Tema/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 header/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,44 +103,18 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/fiatia1/Cmake/Tema/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 header/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/fiatia1/Cmake/Tema/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 header/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/fiatia1/Cmake/Tema/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
-
-#=============================================================================
-# Target rules for targets named myproject_library
-
-# Build rule for target.
-myproject_library: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 myproject_library
-.PHONY : myproject_library
-
-# fast build rule for target.
-myproject_library/fast:
-	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/myproject_library.dir/build.make src/CMakeFiles/myproject_library.dir/build
-.PHONY : myproject_library/fast
-
-#=============================================================================
-# Target rules for targets named myproject_main
-
-# Build rule for target.
-myproject_main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 myproject_main
-.PHONY : myproject_main
-
-# fast build rule for target.
-myproject_main/fast:
-	$(MAKE) $(MAKESILENT) -f main/CMakeFiles/myproject_main.dir/build.make main/CMakeFiles/myproject_main.dir/build
-.PHONY : myproject_main/fast
 
 # Help Target
 help:
@@ -150,8 +124,6 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... myproject_library"
-	@echo "... myproject_main"
 .PHONY : help
 
 
@@ -163,6 +135,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/fiatia1/Cmake/Tema/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

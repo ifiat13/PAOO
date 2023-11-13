@@ -1,4 +1,4 @@
-# CMake version
+# CMakeLists.txt in project root directory
 cmake_minimum_required(VERSION 3.0)
 
 # Project name
@@ -16,3 +16,5 @@ else()
 endif()
 
 add_subdirectory(src)
+add_subdirectory(header)
+add_subdirectory(main)
