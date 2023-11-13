@@ -18,6 +18,13 @@ int main() {
     GenericVehicle<float> car("Volkswagen", "Passat", 2023, 45000.50);//clasa templetizata folosire
     Utilities::displayDetails(car);
 
+        std::shared_ptr<Person> person = std::make_shared<Person>("John Doe");
+        person->addMotorcycle(std::make_shared<Motorcycle>("Kawasaki", "Ninja ZX-10R", 2021, 15500.99));
+        person->addMotorcycle(std::make_shared<Motorcycle>("Harley-Davidson", "Street Glide", 2019, 22000.50));
+
+        // Afișarea detaliilor motocicletelor persoanei
+        person->displayMotorcycles();
+        
     // Afișarea listei inițiale de motociclete
     std::cout << "Lista inițială de motociclete:\n";
     manager.listMotorcycles();

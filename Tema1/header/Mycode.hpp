@@ -92,6 +92,23 @@ namespace VehicleSystem {
         int maxSpeed;
     };
 
+    class Person {
+    public:
+        Person(const std::string& name) : name(name) {}
+
+        const std::string& getName() const {
+            return name;
+        }
+
+        void addMotorcycle(std::shared_ptr<Motorcycle> motorcycle);
+
+        void displayMotorcycles() const;
+
+    private:
+        std::string name;
+        std::vector<std::shared_ptr<Motorcycle>> motorcycles;
+    };
+    
     // Managerul de motociclete
     class MotorcycleManager {
     public:

@@ -84,6 +84,18 @@ namespace VehicleSystem {
         std::cout << "Oprire motor (motocicleta) - " << getBrand() << " " << getModel() << std::endl;
     }
 
+    void Person::addMotorcycle(std::shared_ptr<Motorcycle> motorcycle) {
+        motorcycles.push_back(motorcycle);
+    }
+
+    // Implementarea clasei person
+    void Person::displayMotorcycles() const {
+        std::cout << "Motocicletele lui " << name << ":\n";
+        for (const auto& motorcycle : motorcycles) {
+            Utilities::displayDetails(*motorcycle);
+        }
+    }
+
     // Implementarea clasei SportMotorcycle
     SportMotorcycle::SportMotorcycle(const std::string& brand, const std::string& model, int year, float price, int maxSpeed)
         : Motorcycle(brand, model, year, price), maxSpeed(maxSpeed) {}
